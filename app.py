@@ -16,6 +16,9 @@ def answer():
         kinoko_count += 1
     elif request.form.get("item") == 'takenoko':
         takenoko_count += 1
+    messages.append(request.form.get("message"))
+    if len(messages) > 3:
+        messages = messages[-3:]
 
     message_html = ''
     for i in range(len(messages)):
